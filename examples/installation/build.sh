@@ -136,13 +136,7 @@ xctest() {
     fi
 
     if [[ $PLATFORM != osx ]]; then
-        [[ $PLATFORM == 'ios' ]] && SDK=iphoneos || SDK=$PLATFORM
-        if [ -d "$workspace" ]; then
-            [[ $LANG == 'swift' ]] && scheme=(-scheme RealmSwift) || scheme=(-scheme Realm)
-        else
-            scheme=()
-        fi
-        xcodebuild "${project[@]}" "${scheme[@]}" -sdk "$SDK" build "${code_signing_flags[@]}"
+        xcodebuild "${project[@]}" "${scheme[@]}" archive "${code_signing_flags[@]}"
     fi
 }
 
