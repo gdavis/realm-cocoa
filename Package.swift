@@ -4,7 +4,7 @@ import PackageDescription
 import Foundation
 
 let coreVersionStr = "10.1.1"
-let cocoaVersionStr = "10.1.2"
+let cocoaVersionStr = "10.1.3"
 
 let coreVersionPieces = coreVersionStr.split(separator: ".")
 let coreVersionExtra = coreVersionPieces[2].split(separator: "-")
@@ -118,9 +118,7 @@ let package = Package(
             dependencies: ["Realm"],
             path: "RealmSwift",
             exclude: [
-                "Sync.swift",
                 "BSON.swift",
-                "App.swift",
                 "MongoClient.swift",
                 "ObjectiveCSupport+Sync.swift",
                 "ObjectiveCSupport+BSON.swift",
